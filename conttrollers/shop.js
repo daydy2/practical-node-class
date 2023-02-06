@@ -23,6 +23,7 @@ exports.getAddBookPage = (req, res, next) => {
 exports.getSearchPage = (req, res, next) => {
   res.render("shop/search", {
     pageTitle: "Search",
+    prods: [],
   });
 };
 exports.getLoginPage = (req, res, next) => {
@@ -65,55 +66,48 @@ exports.postBook = (req, res, next) => {
     });
 };
 
-// exports.searchByIsbn = (req, res, next) => {
-//   const isbn = req.body.isbn;
+exports.searchByIsbn = (req, res, next) => {
+  const isbn = req.body.isbn;
+  
 
-//   Book.findOne({ isbn: isbn })
-//     .then((result) => {
-//       res.render("shop/shop", {
-//         prods: result,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-// exports.searchByAuthor = (req, res, next) => {
-//   const author = req.body.author;
+  Book.find({ isbn: isbn })
+    .then((result) => {
+      res.render("shop/search", {
+        pageTitle: "Search Result - ISBN",
+        prods: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.searchByAuthor = (req, res, next) => {
+  const author = req.body.author;
+  console.log(author)
 
-//   Book.findOne({ author: author })
-//     .then((result) => {
-//       res.render("shop/shop", {
-//         prods: result,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-// exports.searchByTitle = (req, res, next) => {
-//   const title = req.body.title;
+  Book.find({ author: author })
+    .then((result) => {
+      console.log(result)
+      res.render("shop/search", {
+        pageTitle: "Search Result - AUTHOR",
+        prods: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.searchByTitle = (req, res, next) => {
+  const title = req.body.title;
 
-//   Book.findOne({ title: title })
-//     .then((result) => {
-//       res.render("shop/shop", {
-//         prods: result,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-// exports.searchByReview = (req, res, next) => {
-//   const review = req.body.review;
+  Book.findOne({ title: title })
+    .then((result) => {
+      res.render("shop/shop", {
+        prods: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-//   Book.findOne({ review: review })
-//     .then((result) => {
-//       res.render("shop/shop", {
-//         prods: result,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };

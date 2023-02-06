@@ -5,6 +5,7 @@
     <body>
         <%- include('../includes/navigation.ejs') %>
         <main>
+            
             <% if (prods.length > 0) { %>
                 <div class="bookContainer">
                     <% for (let book of prods) { %>
@@ -15,7 +16,7 @@
                             <div class="card__content">
                                 <h2 class="book__author">By: <%= book.author %></h2>
                                 <p class="book__isbn"><span>ISBN: </span> <%= book.isbn %></p>
-                                <p class="book__review">Review: <%= book.review %></p>                            
+                                <p class="book__review"> <span>Review: </span> <%= book.review %></p>                            
                             </div>
                             
                         </article>

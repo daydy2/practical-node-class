@@ -2,11 +2,16 @@ html {
     font-size: 62.5%;
 }
 
-.addBook {
-    width: 50%;
+main {
+    width: 100%;
+}
+
+main .addBook {
+    width: 30%;
     display: block;
-    margin: 4rem auto;
+    margin: 0 auto;
     font-size: 1.9rem;
+  
 
 }
 
@@ -17,13 +22,36 @@ html {
     color: rgb(30, 76, 76);
 }
 
-.addBook input {
+.addBook input,
+.addBook textarea {
     padding: 1rem;
     margin: .3rem auto;
     border-radius: .3rem;
-    width: 60%;
+    width: 100%;
+    border: .1rem solid rgb(94, 79, 78);
 }
-.addBook textarea{
-    width: 60%;
 
+.addBook input:focus,
+.addBook textarea :focus{
+    border-color: rgb(139, 82, 76);
+}
+
+.addBook button{
+    margin: 0 auto;
+    border-radius: .3rem;
+    text-transform: uppercase;
+    color: white;
+    background: rgb(24, 26, 183);
+    padding: 1rem 2rem;
+    border-style: none;
+    transition: all 400ms;
+}
+
+.addBook button:hover{
+    cursor: pointer;
+    transform: translateY(3px);
+}
+
+main .searchForm{
+    margin-top: 3rem;
 }

@@ -4,14 +4,16 @@
 
     <body>
         <%- include('../includes/navigation.ejs') %>
-        <form method="POST" class="addBook" action="/login">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email">
-            
-            <button class="btn" type="submit">Submit</button>
-        </form>
+        <main>
+            <form method="POST" class="addBook" action="/login">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                
+                <button class="btn" type="submit">Submit</button>
+            </form
+        </main>
         
 
 <%- include('../includes/end.ejs') %>

@@ -5,12 +5,14 @@ html {
 a {
     all: unset
 }
-nav{
+
+nav {
     background-color: rgb(121, 74, 12);
     color: black;
     height: 6rem;
     width: 100%;
 }
+
 .nav--list {
     display: flex;
     flex-direction: row;
@@ -25,6 +27,11 @@ nav{
     margin-top: 2rem;
 
 }
-.nav--listItem:not(:last-child){
+
+.nav--listItem:hover {
+    cursor: pointer;
+}
+
+.nav--listItem:not(:last-child) {
     margin-right: 5rem;
 }

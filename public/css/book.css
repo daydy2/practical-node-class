@@ -38,9 +38,12 @@ div .book__isbn {
 div .book__review {
     font-size: 1.5rem;
     text-align: center;
+    
 }
 
-.book__isbn span {
+.book__isbn span,
+.book__review span {
     color: brown;
     font-family: san-serif;
+    font-weight: bold;
 }
