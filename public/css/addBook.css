@@ -1,0 +1,29 @@
+html {
+    font-size: 62.5%;
+}
+
+.addBook {
+    width: 50%;
+    display: block;
+    margin: 4rem auto;
+    font-size: 1.9rem;
+
+}
+
+.addBook label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(30, 76, 76);
+}
+
+.addBook input {
+    padding: 1rem;
+    margin: .3rem auto;
+    border-radius: .3rem;
+    width: 60%;
+}
+.addBook textarea{
+    width: 60%;
+
+}

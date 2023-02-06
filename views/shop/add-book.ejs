@@ -1,0 +1,20 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/addBook.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <form method="POST" class="addBook" action="/add-book">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" name="isbn">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+            <label for="review">Review</label>
+            <textarea name="review" id="review" cols="50" rows="10"></textarea>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        
+
+<%- include('../includes/end.ejs') %>
