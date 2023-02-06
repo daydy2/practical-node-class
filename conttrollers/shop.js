@@ -68,7 +68,6 @@ exports.postBook = (req, res, next) => {
 
 exports.searchByIsbn = (req, res, next) => {
   const isbn = req.body.isbn;
-  
 
   Book.find({ isbn: isbn })
     .then((result) => {
@@ -83,11 +82,9 @@ exports.searchByIsbn = (req, res, next) => {
 };
 exports.searchByAuthor = (req, res, next) => {
   const author = req.body.author;
-  console.log(author)
 
   Book.find({ author: author })
     .then((result) => {
-      console.log(result)
       res.render("shop/search", {
         pageTitle: "Search Result - AUTHOR",
         prods: result,
@@ -100,9 +97,10 @@ exports.searchByAuthor = (req, res, next) => {
 exports.searchByTitle = (req, res, next) => {
   const title = req.body.title;
 
-  Book.findOne({ title: title })
+  Book.find({ title: title })
     .then((result) => {
-      res.render("shop/shop", {
+      res.render("shop/search", {
+        pageTitle: "Search Result - TITLE",
         prods: result,
       });
     })
@@ -110,4 +108,3 @@ exports.searchByTitle = (req, res, next) => {
       console.log(err);
     });
 };
-
