@@ -95,13 +95,30 @@ exports.searchByAuthor = (req, res, next) => {
     });
 };
 exports.searchByTitle = (req, res, next) => {
-  const title = req.body.title;
+  const sample = req.body.title;
 
   Book.find({ title: title })
     .then((result) => {
       res.render("shop/search", {
         pageTitle: "Search Result - TITLE",
         prods: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.getEditBook = (req, res, next) => {
+  const bookId = req.params.bookId;
+
+  Book.findById(bookId)
+    .then((book) => {
+      if (!book) {
+        return res.redirect("/");
+      }
+      res.render("admin/edit-book", {
+        pageTitle: "Edit Book",
+        book: book
       });
     })
     .catch((err) => {
