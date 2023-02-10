@@ -37,3 +37,7 @@ nav {
 .nav--listItem {
     margin-right: 5rem;
 }
+
+.nav--list button{
+    all: unset;
+}

@@ -31,7 +31,9 @@
     </li>
     <% } else { %>
       <li class="nav--listItem">
-        <a href="/logout">Logout</a>
+        <form action="/logout" method="post">
+          <button type="submit">Logout</button>
+        </form>
       </li>
     <% } %>
   </ul>

@@ -12,6 +12,7 @@ const {
   getSignupPage,
   postSignupPage,
   postLoginPage,
+  postLogout,
 } = require("../conttrollers/shop");
 
 router.get("/", getAllbooks);
@@ -21,5 +22,6 @@ router.post("/searchbyauthor", searchByAuthor);
 router.post("/searchbytitle", searchByTitle);
 router.route('/login').get(getLoginPage).post(postLoginPage)
 router.route("/signup").get(getSignupPage).post(postSignupPage);
+router.post('/logout', postLogout)
 
 module.exports = router;
