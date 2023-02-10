@@ -31,7 +31,9 @@ nav {
 .nav--listItem:hover {
     cursor: pointer;
 }
-
-.nav--listItem:not(:last-child) {
+.spacer{
+    flex: 1;
+}
+.nav--listItem {
     margin-right: 5rem;
 }

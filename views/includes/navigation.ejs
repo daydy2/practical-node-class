@@ -3,17 +3,36 @@
     <li class="nav--listItem">
       <a href="/">Books</a>
     </li>
-    <li class="nav--listItem">
-      <a href="/">Edit Review</a>
-    </li>
-    <li class="nav--listItem">
-      <a href="/add-book">Add Books</a>
-    </li>
+
+    <% if (isAuthenticated) { %>
+      <li class="nav--listItem">
+        <a href="/">Edit Review</a>
+      </li>
+      <li class="nav--listItem">
+        <a href="/add-book">Add Books</a>
+      </li>
+
+    <% } %>
+    
     <li class="nav--listItem">
       <a href="/search">Search</a>
     </li>
+
+    <li class="nav--listItem spacer">
+    </li>
+
+    <% if (!isAuthenticated) { %>
+
     <li class="nav--listItem">
       <a href="/login">Login</a>
     </li>
+    <li class="nav--listItem">
+      <a href="/signup">Signup</a>
+    </li>
+    <% } else { %>
+      <li class="nav--listItem">
+        <a href="/logout">Logout</a>
+      </li>
+    <% } %>
   </ul>
 </nav>
