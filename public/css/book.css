@@ -48,20 +48,20 @@ div .book__review {
     font-weight: bold;
 }
 
-.card__edit{
+.card__edit button{
     padding: 1rem;
     border: .15px solid palevioletred;
-    width: 7.5rem;
+    
     text-align: center;
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-out;
 }
 
-.card__edit:hover,
-.card__edit:focus {
+.card__edit button:hover,
+.card__edit button:focus {
     cursor: pointer;
     transform: translateY(-3px);
 }
-.card__edit a{
+.card__edit button{
     font-size: 1.4rem;
 }
