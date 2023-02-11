@@ -15,7 +15,7 @@ const {
   postLogout,
   getEditBook,
   postEditbook,
-} = require("../conttrollers/shop");
+} = require("../controllers/shop");
 
 router.get("/", getAllbooks);
 router.route("/add-book").get(getAddBookPage).post(postBook);

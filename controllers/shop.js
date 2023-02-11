@@ -115,11 +115,7 @@ exports.postBook = (req, res, next) => {
   const review = req.body.review;
   const isbn = req.body.isbn;
   const title = req.body.title;
-  console.log(author);
-  console.log(title);
-  console.log(isbn);
-  console.log(review);
-
+  
   const newbook = new Book({
     isbn: isbn,
     author: author,
