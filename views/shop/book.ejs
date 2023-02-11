@@ -21,7 +21,8 @@
                             <% if (isAuthenticated) { %>
                             <div class="card__edit">
                                 <form action="/edit-review" method="post">
-                                    <button type="submit">Edit Review</button>
+                                    <input type="hidden" value="<%= book._id %>" name="bookId">
+                                    <button type="submit"> Edit review</button>
                                 </form>
                             </div>
                             <% } %>

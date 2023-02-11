@@ -137,6 +137,7 @@ exports.postBook = (req, res, next) => {
     });
 };
 
+
 exports.searchByIsbn = (req, res, next) => {
   const isbn = req.body.isbn;
 
@@ -183,13 +184,14 @@ exports.searchByTitle = (req, res, next) => {
     });
 };
 exports.getEditBook = (req, res, next) => {
-  const bookId = req.params.bookId;
+  const bookId = req.body.bookId;
 
   Book.findById(bookId)
     .then((book) => {
       if (!book) {
         return res.redirect("/");
       }
+      console.log(book.review)
       res.render("admin/edit-book", {
         pageTitle: "Edit Book",
         book: book,
@@ -200,3 +202,28 @@ exports.getEditBook = (req, res, next) => {
       console.log(err);
     });
 };
+exports.postEditbook = (req, res, next) => {
+  const bookTitle = req.body.title;
+  const bookAuthor = req.body.author;
+  const bookIsbn = req.body.isbn;
+  const bookReview = req.body.review;
+  const bookId = req.body.bookId;
+
+  Book.findById(bookId).then(book => {
+    if (!book){
+      return res.redirect('/')
+    }
+    
+    book.title = bookTitle;
+    book.isbn = bookIsbn;
+    book.author = bookAuthor;
+    book.review = bookReview;
+
+    return book.save().then(result => {
+      console.log('Book Updated')
+      res.redirect('/')
+    })
+  }).catch(err => {
+    console.log(err)
+  })
+}
